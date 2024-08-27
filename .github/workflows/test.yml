@@ -17,4 +17,4 @@ jobs:
     needs: [action1]
     uses: FranciscoBodden/call-workflow/.github/workflows/call.yml@main
     with:
-        URL: /api/ping
+        URL: "${{needs.action1.outputs.url}}"
