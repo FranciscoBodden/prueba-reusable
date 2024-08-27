@@ -15,6 +15,6 @@ jobs:
          echo "url=${{ env.GITHUB_REPOSITORY_NAME_PART_SLUG_URL }}.dev." >> $GITHUB_OUTPUT
    post-deploy:
     needs: [action1]
-    runs-on: ubuntu-latest
-    steps:
-        - run: echo "${{needs.action1.outputs.url}}"
+    uses: FranciscoBodden/call-workflow/.github/workflows/call.yml@main
+    with:
+        URL: /api/ping
